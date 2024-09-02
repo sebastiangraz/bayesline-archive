@@ -1,0 +1,246 @@
+.comparison {
+  background: var(--background-accent);
+  grid-column: start / end;
+  grid-template-areas:
+    'col col col'
+    'text text text'
+    'ui ui ui';
+  grid-template-columns: 2em 6em 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 0;
+  margin-top: 2em;
+
+  .text {
+    margin: 2em;
+    grid-area: text;
+  }
+  .cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5em;
+    /* justify-content: center; */
+  }
+
+  .ui {
+    /* aspect-ratio: 768/584; */
+    align-self: end;
+    max-height: 528px;
+    grid-area: ui;
+    padding-left: 1em;
+    overflow: clip;
+    margin-top: -2em;
+    mask-image: radial-gradient(ellipse at top left, #ffff 40%, #fff0 90%);
+    picture {
+      /* padding: 0.9125em; */
+      max-height: 100%;
+      top: 2em;
+      left: 1em;
+      position: relative;
+      width: calc(100% + 2em);
+    }
+  }
+  .banner {
+    background: var(--accent-2);
+    height: 100%;
+    z-index: 0;
+    grid-area: col;
+    bottom: 2em;
+    position: relative;
+    padding: 1em 0.5em;
+    text-align: center;
+    gap: 1.5em;
+    display: grid;
+    grid-auto-flow: column;
+
+    .bannertext {
+      display: grid;
+      grid-column: span 2;
+    }
+
+    section {
+      display: grid;
+      gap: 0.2em;
+      grid-row: 2;
+    }
+
+    svg {
+      padding: 0 0.5em;
+      color: var(--accent-1);
+    }
+  }
+
+  @media (--md) {
+    grid-template-areas:
+      '. col text '
+      '. col ui ';
+    .banner {
+      grid-auto-flow: row;
+      section {
+        grid-row: auto;
+      }
+      .bannertext {
+        grid-column: auto;
+      }
+    }
+  }
+}
+
+.centerAsset {
+  background: var(--background);
+  padding: 2em 0;
+  gap: 2em 0;
+  display: grid;
+  justify-items: center;
+  @media (--md) {
+    gap: 1.5em 0;
+  }
+  .copy {
+    display: grid;
+    gap: 0.5em;
+    justify-items: center;
+    text-align: center;
+    grid-column: start / end;
+    padding: 0 2em;
+
+    span {
+      max-width: 24rem;
+    }
+  }
+  .cpu {
+    grid-column: 8 / span 10;
+    place-self: center;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    @media (--md) {
+      grid-column: 10 / span 5;
+    }
+  }
+  .ctas {
+    gap: 0.5em;
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-columns: auto auto;
+    justify-content: start;
+    align-content: start;
+    justify-items: center;
+    grid-column: start / end;
+    @media (--sm) {
+      grid-auto-flow: column;
+    }
+  }
+  .shapefield {
+    grid-area: 1/1;
+    width: 100%;
+  }
+  .logo {
+    color: var(--accent-1);
+    width: 0.75em;
+    place-self: center;
+    grid-area: 1/1;
+    justify-content: center;
+    left: -0.033em;
+    position: relative;
+    pointer-events: none;
+    & > *:not(svg) {
+      background: radial-gradient(var(--background) 30%, transparent 120%);
+      padding: 0.25em;
+    }
+  }
+}
+
+.ticker {
+  grid-template-areas:
+    'nav nav '
+    'left right ';
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  padding: 0;
+  gap: 2em 0;
+  display: grid;
+  justify-items: center;
+  position: relative;
+  background: var(--background-accent);
+  color: var(--foreground);
+
+  overflow: clip;
+  .featureTitle {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+  .content {
+    display: grid;
+    grid-column: left / right;
+    grid-template-columns: subgrid;
+    z-index: 1;
+  }
+  .image {
+    grid-column: right;
+    margin-bottom: -1em;
+    margin-right: -1em;
+  }
+  .text {
+    grid-column: left;
+    padding: 0 4em;
+  }
+  .bgImage {
+    grid-column: left / right;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 20%;
+    width: 70%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom;
+    pointer-events: none;
+  }
+  .shapefield {
+    grid-column: left;
+  }
+  nav {
+    display: grid;
+    grid-auto-flow: column;
+    width: 100%;
+    gap: 1rem;
+    padding: 0 2em;
+    grid-area: nav;
+    justify-content: stretch;
+    align-items: center;
+    box-shadow: 0 2px 0 -1px var(--foreground-border);
+
+    button {
+      all: unset;
+
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      cursor: pointer;
+      list-style: none;
+      padding: 4rem 0.75rem 2rem 0.75rem;
+      &:hover,
+      &:focus-visible {
+        box-shadow: 0 2px 0 -1px var(--foreground-border);
+      }
+      p,
+      svg {
+        color: var(--foreground-accent);
+      }
+      .underline {
+        inset: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        box-shadow: 0 2px 0 -1px var(--foreground);
+      }
+    }
+    :global button.selected p,
+    :global button.selected svg {
+      color: var(--foreground);
+    }
+  }
+}

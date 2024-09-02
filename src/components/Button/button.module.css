@@ -1,0 +1,79 @@
+.button {
+  background: var(--background);
+  color: var(--foreground);
+  overflow: clip;
+  transition: 0.2s ease opacity;
+  border-radius: var(--radius);
+  grid-auto-rows: 1.25em;
+  text-transform: uppercase;
+  display: inline-grid;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  place-self: start;
+  transition: background 0.2s ease;
+  min-height: 3rem;
+  user-select: none;
+  & > *:not(svg) {
+    padding: 0 1.5rem;
+    display: inline-grid;
+    height: 1em;
+    align-content: center;
+    justify-content: center;
+    pointer-events: none;
+    grid-area: 1/1;
+    color: inherit;
+    z-index: 1;
+    white-space: nowrap;
+  }
+  &:hover {
+    background: color-mix(in srgb, var(--background), var(--foreground) 10%);
+    cursor: pointer;
+  }
+}
+
+.ref {
+  display: grid;
+}
+
+.button .field {
+  color: var(--background-accent);
+  position: relative;
+  grid-area: 1/1;
+  z-index: 0;
+  max-width: 3em;
+  min-width: 2em;
+  width: max-content;
+  place-self: center center;
+  transition:
+    transform 0.2s ease-out,
+    opacity 0.2s ease-out;
+}
+
+.primary,
+.primary-interactive {
+  text-decoration: none;
+  position: relative;
+  font-size: inherit;
+}
+
+.secondary {
+  background: var(--background-accent);
+  text-decoration: none;
+  position: relative;
+  font-size: inherit;
+  .field {
+    color: color-mix(in srgb, var(--foreground) 20%, var(--background-accent));
+  }
+  &:hover {
+    background: color-mix(in srgb, var(--background-accent), var(--foreground) 10%);
+  }
+}
+
+.small {
+  min-height: 1rem;
+  grid-auto-rows: 2.5rem;
+  & > *:not(svg) {
+    padding: 0 1rem;
+  }
+}

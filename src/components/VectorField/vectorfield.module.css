@@ -1,0 +1,10 @@
+.vectorfield {
+  display: grid;
+  overflow: visible;
+  color: var(--foreground);
+}
+.shapefield {
+  display: grid;
+  overflow: visible;
+  color: var(--foreground);
+}

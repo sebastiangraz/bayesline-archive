@@ -1,0 +1,31 @@
+@layer layout {
+  .layoutgrid {
+    display: grid;
+
+    grid-template-columns: [bleedstart] 1.5em [start] repeat(23, 1fr) [end] 1.5em [bleedend];
+    :global .col:has(.col) {
+      display: grid;
+      grid-template-columns: subgrid;
+      align-items: start;
+      align-content: start;
+    }
+    :global & > *,
+    :global .col {
+      grid-column: start/end;
+    }
+    :global .bleed {
+      grid-column: bleedstart / bleedend;
+    }
+    :global & > * + *:not(:where(:last-of-type, .cookie)) {
+      margin-bottom: 4em;
+    }
+
+    @media (--sm) {
+      grid-template-columns: [bleedstart] 1em [start] repeat(23, 1fr) [end] 1em [bleedend];
+    }
+
+    @media (--lg) {
+      grid-template-columns: [bleedstart] 1fr [start] repeat(23, 1em) [end] 1fr [bleedend];
+    }
+  }
+}

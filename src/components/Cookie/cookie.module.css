@@ -1,0 +1,49 @@
+.info {
+  color: inherit;
+  display: inline;
+}
+
+.cookieWrapper {
+  display: grid;
+  row-gap: 0.5em;
+  grid-column: start / end;
+  grid-auto-columns: auto min-content;
+  grid-auto-flow: row;
+  width: 100%;
+  @media (--sm) {
+    grid-auto-flow: column;
+  }
+}
+
+.cookie {
+  position: absolute;
+  display: grid;
+  position: sticky;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+  box-sizing: border-box;
+  padding: 1em 0.5em;
+  background-color: var(--navigation);
+  border-radius: var(--radius) var(--radius) 0 0;
+  color: var(--foreground);
+  box-shadow: var(--shadow);
+  border: none;
+  transition:
+    transform 0.2s ease,
+    opacity 0.16s ease;
+  opacity: 1;
+  transform: translateY(0%);
+  @media (--sm) {
+    padding: 0.25em;
+  }
+  @starting-style {
+    opacity: 0;
+    transform: translateY(4%);
+  }
+}
+.show {
+  pointer-events: none;
+  transform: translateY(4%);
+  opacity: 0;
+}

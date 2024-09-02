@@ -1,0 +1,143 @@
+---
+title: Introducing Launchpad - The Future of Financial Research
+published: 2024-06-25
+seed: 19
+excerpt: We are excited to announce that we have raised a $10M Series A round led by XYZ Capital. This funding will help us accelerate our growth and expand our team.
+---
+
+# Untapped potential
+
+In a constantly changing environment, companies must adapt to survive. The quest for growth, resilience, and a competitive edge demands continuous innovation and optimization in the face of emerging technologies, shifting markets, and intense competition.
+
+This is an array `[1, 2, 3]{:js}` of numbers 1 through 3.
+The name of the function is `getStringLength{:.entity.name.function}`.
+
+# In a constantly changing environment, companies must adapt to survive.
+
+```js
+console.log(1);
+```
+
+```js showLineNumbers {1-2,5}
+export function* FibonacciSequence() {
+  let [a, b] = [0, 1];
+  while (true) {
+    yield a;
+    [a, b] = [b, a + b];
+  }
+}
+```
+
+```css showLineNumbers /inline-block/ /Other/ /2rem/ /code[data-line-numbers-max-digits='3']/
+code > [data-line]::before {
+  counter-increment: line;
+  content: counter(line); # [!code highlight]
+  /* Other styling */
+  display: inline-block;
+}
+
+code[data-line-numbers-max-digits='2'] > [data-line]::before { # [!code highlight]
+  width: 2rem;
+}
+
+code[data-line-numbers-max-digits='3'] > [data-line]::before {
+  width: 3rem;
+}
+```
+
+```js
+const fib = FibonacciSequence();
+fib.next().value; // 0
+fib.next().value; // 1
+// 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+```
+
+#### Autolink literals
+
+www.example.com, https://example.com, and contact@example.com.
+
+#### Footnote
+
+A note[^1]
+
+[^1]: Big note.
+
+#### Tables
+
+| a   | b   |   c |  d  |
+| --- | :-- | --: | :-: |
+
+| Available |     |     |     | Process | Allocation |     |     |     | Max |     |     |     |
+| --------- | --- | --- | --- | ------- | ---------- | --- | --- | --- | --- | --- | --- | --- |
+| A         | B   | C   | D   |         | A          | B   | C   | D   | A   | B   | C   | D   |
+| 1         | 5   | 2   | 0   | P0      | 0          | 0   | 1   | 2   | 0   | 0   | 1   | 2   |
+|           |     |     |     | P1      | 1          | 0   | 0   | 0   | 1   | 7   | 5   | 0   |
+|           |     |     |     | P2      | 1          | 3   | 5   | 4   | 2   | 3   | 5   | 6   |
+|           |     |     |     | P3      | 0          | 6   | 3   | 2   | 0   | 6   | 5   | 2   |
+|           |     |     |     | P4      | 0          | 0   | 1   | 4   | 0   | 6   | 5   | 6   |
+
+| Syntax    | Description |
+| --------- | ----------- |
+| Header    | Title       |
+| Paragraph | Text        |
+
+| This   | is    | a       |
+| ------ | ----- | ------- |
+| simple | table | example |
+
+| Syntax    | Description | Test Text |
+| --------- | ----------- | --------- |
+| Header    | Title       | Title     |
+| Paragraph | Text        | Title     |
+| Header    | Title       | Title     |
+| Paragraph | Text        | Title     |
+
+| Item              | In Stock | Price |
+| :---------------- | :------: | ----: |
+| Python Hat        |   True   | 23.99 |
+| SQL Hat           |   True   | 23.99 |
+| Codecademy Tee    |  False   | 19.99 |
+| Codecademy Hoodie |  False   | 42.99 |
+
+#### Strikethrough
+
+~one~ or ~~two~~ tildes.
+
+#### Tasklist
+
+- [ ] to do
+- [x] done
+
+We do not just present theories or generic advice–we conduct a thorough investigation to uncover the often-hidden potential within this crucial cross-company discipline.
+
+---
+
+Yet, a powerful source of untapped potential is often overlooked by companies: effective net working capital (NWC) management.
+Our white paper embarks on a captivating investigative journey, delving into the world of NWC management. We do not just present theories or generic advice - we conduct a thorough investigation to uncover the often-hidden potential within this crucial cross-company discipline.
+
+<aside>
+  We do not just present theories or generic advice–we conduct a thorough investigation to uncover the often-hidden
+  potential within this crucial cross-company discipline.
+</aside>
+
+### Here is why we believe a deep dive into NWC management is needed.
+
+# Working Capital Management
+
+Yet, a powerful source of untapped potential is often overlooked by companies: effective net working capital (NWC) management.
+Our white paper embarks on a captivating investigative journey, delving into the world of NWC management. We do not just present theories or generic advice - we conduct a thorough investigation to uncover the often-hidden potential within this crucial cross-company discipline.
+
+<aside>We do not just present theories or generic advice–we conduct a thorough investigation to.</aside>
+
+### A new emerging trend
+
+<aside>
+  Despite the importance of NWC management, many companies struggle to optimize their working capital. This is often due
+  to a lack of understanding of the key drivers of NWC and the potential benefits of effective management. Our white
+  paper aims to address this gap by providing a comprehensive overview of NWC management, including key concepts, best
+  practices, and case studies. We also offer practical recommendations for companies looking to improve their working
+  capital performance.
+</aside>
+
+However you choose to engage with our research, we hope you find it valuable and informative. We look forward to hearing
+your feedback and continuing the conversation on how we can help you unlock the full potential of your working capital.

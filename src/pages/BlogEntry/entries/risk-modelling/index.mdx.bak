@@ -1,0 +1,84 @@
+---
+title: Risk modelling and the future of finance
+published: 2024-06-27
+theme: 4
+excerpt: A crucial aspect of financial management is risk modelling. This white paper explores the importance of risk modelling in the context of modern finance and the future of the industry.
+seed: 114
+# 111
+---
+
+Risk modelling is a crucial aspect of financial management. It involves the use of mathematical models to assess and quantify the risks associated with various financial instruments, portfolios, and strategies. By using risk models, financial institutions can better understand the potential risks they face and make more informed decisions to manage and mitigate those risks.
+
+```
+bln
+└── equity
+    ├── universes
+    │   ├── settings # [!code highlight]
+    │   └── load
+    ├── exposures
+    │   ├── settings
+    │   └── load
+    ├── riskmodels
+    │   ├── settings
+    │   └── load
+    ├── portfolioreport
+    │   ├── settings
+    │   └── load
+    └── byod
+        ├── settings
+        └── load
+```
+
+Yet, a powerful source of untapped potential is often overlooked by companies: effective net working capital (NWC) management.
+Our white paper embarks on a captivating investigative journey, delving into the world of NWC management. We do not just present theories or generic advice - we conduct a thorough investigation to uncover the often-hidden potential within this crucial cross-company discipline.
+
+```python /byod/ /size/
+risk_model_settings_with_byod = FactorRiskModelSettings(
+    universe=UniverseSettings( # [!code highlight]
+        industry=IndustrySettings( # [!code highlight]
+            hierarchy="sic", # [!code highlight]
+            include=["Services"],
+            exclude=["Legal Services"]
+        ),
+        region=RegionSettings(
+            include=["USA"]
+        )
+    ),
+    exposures=ExposureSettings(
+        styles={
+            "size": [
+                "log_market_cap", "log_total_assets",
+            ],
+            "value": [
+                "price_to_earnings", "book_to_price",
+            ],
+            "volatility": [
+                "sigma", "beta",
+            ],
+            "momentum": [
+                "alpha",
+            ],
+            "dividend": [ # [!code highlight]
+                "dividend_yield",
+            ],
+            "leverage": [
+                "debt_to_assets", "debt_to_equity",
+            ],
+            "Crowding": ["my-byod.my_factor"]
+        },
+        industries=HierarchyLevel(hierarchy="sic", level=1),
+    ),
+    modelconstruction=ModelConstructionSettings(
+        weights="SqrtCap"
+    )
+)
+
+risk_model_with_byod = bln.equity.riskmodels.load(risk_model_settings_with_byod).get()
+
+risk_model_with_byod.fret().tail()
+```
+
+### Here is why we believe a deep dive into NWC management is needed.
+
+Yet, a powerful source of untapped potential is often overlooked by companies: effective net working capital (NWC) management.
+Our white paper embarks on a captivating investigative journey, delving into the world of NWC management. We do not just present theories or generic advice - we conduct a thorough investigation to uncover the often-hidden potential within this crucial cross-company discipline.

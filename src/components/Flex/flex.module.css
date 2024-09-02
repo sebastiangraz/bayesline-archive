@@ -1,0 +1,39 @@
+.flex {
+  display: flex;
+}
+.column {
+  flex-direction: column;
+}
+.wrap {
+  flex-wrap: wrap;
+  /* & > * {
+    flex: 1 0 100%;
+    flex-direction: column;
+    @media (--md) {
+      flex: 1 0 0%;
+      flex-direction: row;
+    }
+  } */
+}
+.between {
+  justify-content: space-between;
+}
+.center {
+  align-items: center;
+  justify-content: center;
+}
+.gap-1 {
+  gap: 0.5rem;
+}
+.gap-2 {
+  gap: 1rem;
+}
+.gap-3 {
+  gap: 1.5rem;
+}
+.gap-4 {
+  gap: 2rem;
+}
+.gap-5 {
+  gap: 4rem;
+}

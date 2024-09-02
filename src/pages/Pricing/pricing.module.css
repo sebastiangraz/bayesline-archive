@@ -1,0 +1,32 @@
+.page {
+  gap: 0.5em;
+}
+.title {
+  margin-bottom: 1em;
+  min-height: 2em;
+}
+.card {
+  :global .card-header {
+    gap: 0.75em;
+  }
+}
+.tiers {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column: start / end;
+  justify-content: center;
+  align-content: center;
+  gap: 0.5em 2em;
+  @media (--md) {
+    grid-template-columns: 1fr 1px 1fr;
+  }
+  & > * {
+    display: grid;
+    grid-row: span 5;
+    gap: 1em;
+    @media (--md) {
+      gap: inherit;
+      grid-template-rows: subgrid;
+    }
+  }
+}

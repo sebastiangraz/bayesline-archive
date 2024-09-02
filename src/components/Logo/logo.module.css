@@ -1,0 +1,146 @@
+/* Optical size 0-100 : font-variation-settings: "opsz" 0; */
+/* Animation loop 0-128 : font-variation-settings: 'LOOP' 0; */
+/* Reveal variant : font-feature-settings: 'ss01' on; */
+/* Reveal alt variant : font-feature-settings: 'ss02' on; */
+@layer logo {
+  .logo {
+    container-type: inline-size;
+    align-items: center;
+    display: inline-flex;
+    flex-direction: row;
+    gap: calc(100% * 10 / 242);
+    width: 100%;
+    color: var(--foreground);
+    &:hover {
+      cursor: pointer;
+
+      .mark {
+        font-feature-settings: 'ss02' off;
+        font-variation-settings: 'LOOP' 0;
+        animation-name: loop;
+        animation-duration: 1s;
+        animation-timing-function: cubic-bezier(0.3, 0.1, 0.2, 0.3);
+        animation-iteration-count: infinite;
+      }
+    }
+  }
+  .loop .mark {
+    font-feature-settings: 'ss02' off;
+    animation-name: loop;
+    animation-duration: 4s;
+    animation-timing-function: cubic-bezier(0.3, 0.1, 0.2, 0.3);
+    animation-iteration-count: infinite;
+    animation-delay: 0.5s;
+  }
+
+  .mark {
+    color: currentColor;
+    font-family: 'B';
+    line-height: 1;
+    display: inline;
+    user-select: none;
+    font-size: calc(100cqw * 42 / 242);
+    font-weight: normal;
+    font-feature-settings: 'ss02' on;
+    transition:
+      font-variation-settings 0.8s cubic-bezier(0.9, 0.3, 0.1, 0.8),
+      opacity 0.5s cubic-bezier(0.9, 0.3, 0.1, 0.8);
+    font-variation-settings:
+      'LOOP' 128,
+      'opsz' 100;
+    opacity: 1;
+    @starting-style {
+      opacity: 0;
+      font-variation-settings:
+        'LOOP' 0,
+        'opsz' 100;
+    }
+    &.isolated {
+      font-size: calc(100cqw * 42 / 44);
+    }
+  }
+
+  .type {
+    width: calc(100% * 188 / 242);
+  }
+
+  @keyframes loop {
+    0% {
+      font-variation-settings:
+        'LOOP' 0,
+        'opsz' 100;
+    }
+    100% {
+      font-variation-settings:
+        'LOOP' 128,
+        'opsz' 100;
+    }
+  }
+}
+
+.contextMenuContent,
+.contextMenuSubContent {
+  min-width: 180px;
+  background: var(--background);
+  border-radius: var(--radius);
+  overflow: hidden;
+  padding: 0.125em;
+  z-index: 10;
+  box-shadow:
+    0 0 0 1px var(--foreground-border),
+    0px 10px 38px -10px rgba(22, 23, 24, 0.35),
+    0px 10px 20px -15px rgba(22, 23, 24, 0.2);
+}
+
+.contextMenuItem,
+.contextMenuCheckboxItem,
+.contextMenuRadioItem,
+.contextMenuSubTrigger {
+  font-size: 13px;
+  line-height: 1;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  height: 25px;
+  padding: 0 5px;
+  position: relative;
+  padding-left: 0.5em;
+  user-select: none;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.contextMenuItem[data-highlighted],
+.contextMenuCheckboxItem[data-highlighted],
+.contextMenuRadioItem[data-highlighted],
+.contextMenuSubTrigger[data-highlighted] {
+  background-color: var(--background-accent);
+}
+
+.contextMenuSeparator {
+  height: 1px;
+  background-color: var(--foreground-border);
+  margin: 5px;
+}
+
+.contextMenuItemIndicator {
+  position: absolute;
+  left: 0;
+  width: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.RightSlot {
+  margin-left: auto;
+  padding-left: 20px;
+  color: var(--mauve-11);
+}
+[data-highlighted] > .RightSlot {
+  color: white;
+}
+[data-disabled] .RightSlot {
+  color: var(--mauve-8);
+}

@@ -1,0 +1,142 @@
+.page {
+  gap: 2em 0;
+}
+
+.hero {
+  gap: 0;
+  align-items: stretch;
+  grid-auto-flow: column dense;
+  & > * {
+    padding: 2em;
+  }
+}
+
+.intro {
+  grid-column: 1 / span end;
+  background: var(--background-4);
+  @media (--md) {
+    grid-column: 1 / span 11;
+  }
+}
+.illustration1 {
+  grid-column: 12 / span end;
+  background: hsl(var(--brand-1));
+  display: none;
+  align-items: center;
+  justify-content: center;
+  & > svg {
+    width: 22rem;
+    height: 14rem;
+  }
+  @media (--sm) {
+    display: grid;
+  }
+  @media (--md) {
+    grid-column: 12 / span end;
+  }
+}
+.illustration2 {
+  padding: 0;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-column: start / end;
+  overflow: clip;
+  background: hsl(var(--brand-0));
+  & > svg {
+    padding: 2rem;
+    width: 100%;
+    height: auto;
+    @media (--sm) {
+      padding: 1rem;
+      width: 100%;
+      height: 17rem;
+    }
+  }
+  @media (--sm) {
+    grid-column: 1 / span 11;
+  }
+  @media (--md) {
+    grid-column: 1 / span 9;
+  }
+}
+.valueprops {
+  grid-column: start / end;
+  background: hsl(var(--brand-2));
+  ul {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 1em;
+    li {
+      margin: 0;
+      display: grid;
+      grid-auto-flow: column;
+      gap: 2.5em;
+      align-items: start;
+      justify-content: center;
+      svg {
+        color: var(--accent-3);
+      }
+      span {
+        color: hsl(var(--steel-5));
+      }
+    }
+  }
+  @media (--md) {
+    grid-column: 10 / span end;
+  }
+}
+
+.founders {
+  padding: 2em;
+  background: white;
+  gap: 1em 0;
+
+  .header {
+    margin-bottom: 1em;
+    max-width: 48ch;
+  }
+  .founderlist {
+    display: grid;
+    grid-column: start / end;
+    grid-template-columns: 1fr;
+    gap: 2em 2em;
+    @media (--md) {
+      gap: 1em 2em;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .founder {
+    gap: 0.25em;
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 4;
+    .avatar {
+      width: 3em;
+      margin-bottom: 0.5em;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .social {
+      align-items: center;
+      flex-wrap: wrap;
+      align-content: start;
+      a {
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      & > * {
+        place-self: center;
+      }
+      hr {
+        place-self: stretch;
+      }
+    }
+    li {
+      margin-left: 0;
+    }
+  }
+}

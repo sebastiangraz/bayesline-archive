@@ -1,0 +1,122 @@
+.hero {
+  background: var(--background-accent);
+  padding: 2em;
+  grid-row: 1;
+  grid-column: bleedstart / bleedend;
+  @media (--md) {
+    grid-column: start/ span 14;
+  }
+
+  @media (--lg) {
+    grid-column: start/ span 12;
+  }
+}
+
+.hero p {
+  max-width: auto;
+  @media (--sm) {
+    max-width: 28rem;
+  }
+  @media (--md) {
+    max-width: 18rem;
+  }
+}
+.content {
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 10em) auto;
+  gap: 1em;
+  height: 100%;
+  grid-column: start / end;
+  @media (--md) {
+    grid-template-rows: 1fr auto minmax(0, 3em) auto;
+    height: unset;
+  }
+  h1 {
+    max-width: 12ch;
+  }
+  .ctas {
+    gap: 0.5em;
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-columns: auto auto;
+    justify-content: start;
+    align-content: start;
+
+    @media (--md) {
+      grid-auto-flow: column;
+    }
+  }
+}
+.badges {
+  display: grid;
+  /* grid-column: start/ span 6; */
+  justify-content: start;
+  gap: 1em;
+  @media (--md) {
+    grid-auto-flow: column;
+  }
+}
+.badge {
+  display: grid;
+  grid-template-rows: subgrid;
+  place-self: start;
+  grid-row: span 2;
+  gap: 0.5rem;
+  width: 100%;
+  img {
+    max-height: 2.25em;
+    opacity: var(--opacity-6);
+    @media (--md) {
+      max-height: 2.25rem;
+    }
+  }
+  & > * {
+    color: var(--foreground-accent);
+    font-size: 11px;
+    place-self: center;
+    white-space: nowrap;
+  }
+}
+
+.ui {
+  position: relative;
+
+  aspect-ratio: 768/584;
+  grid-column: 11 / bleedend;
+  grid-row: 1;
+  align-self: end;
+  max-height: 576px;
+  @media (--md) {
+    grid-column: 14 / bleedend;
+  }
+  @media (--lg) {
+    grid-column: 12 / end;
+  }
+
+  .image {
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: clip;
+    isolation: isolate;
+    max-height: 100%;
+    max-width: 100%;
+    grid-column: 1 / bleedend;
+  }
+}
+
+.cue {
+  /* aspect-ratio: 1; */
+  z-index: 0;
+  /* position: absolute; */
+  /* inset: 0; */
+  grid-column: 9 / span 7;
+  @media (--md) {
+    grid-column: 3 / span 4;
+  }
+  > svg {
+    color: var(--background-3);
+    position: relative;
+    display: flex;
+  }
+}

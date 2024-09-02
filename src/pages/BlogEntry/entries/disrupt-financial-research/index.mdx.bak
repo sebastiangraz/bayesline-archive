@@ -1,0 +1,66 @@
+---
+title: The quest for growth
+published: 2024-06-24
+
+excerpt: We are excited to announce that we have raised a $10M Series A round led by XYZ Capital. This funding will help us accelerate our growth and expand our team.
+seed: 38
+---
+
+import { Logo } from '@/components/Logo';
+
+### A new chapter for our company
+
+<Logo />
+
+This is an array `[1, 2, 3]{:js}` of numbers 1 through 3.
+The name of the function is `getStringLength{:.entity.name.function}`.
+
+# In a constantly changing environment, companies must adapt to survive.
+
+```js
+console.log(1);
+```
+
+```js showLineNumbers {1-2,5}
+export function* FibonacciSequence() {
+  let [a, b] = [0, 1];
+  while (true) {
+    yield a;
+    [a, b] = [b, a + b];
+  }
+}
+```
+
+```css
+code > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+  /* Other styling */
+  display: inline-block;
+}
+
+code[data-line-numbers-max-digits='2'] > [data-line]::before {
+  width: 2rem;
+}
+
+code[data-line-numbers-max-digits='3'] > [data-line]::before {
+  width: 3rem;
+}
+```
+
+```js
+const fib = FibonacciSequence();
+fib.next().value; // 0
+fib.next().value; // 1
+// 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+```
+
+We are excited to announce that we have raised a $10M Series A round led by [XYZ Capital](https://xyzcapital.com).
+
+This funding will help us accelerate our growth and expand our team. We are grateful for the support of our investors and customers.
+
+Thank you for being part of our journey!
+
+```js
+console.log('Hello, world!');
+```
